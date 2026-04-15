@@ -162,18 +162,58 @@ if predict_btn:
     # -----------------------------
     # Metrics Row
     # -----------------------------
+    # col1, col2, col3 = st.columns(3)
+
+    # with col1:
+    #     st.metric("Prediction", "Churn" if prediction == 1 else "Stay")
+
+    # with col2:
+    #     st.metric("Model Used", model_used)
+
+    # with col3:
+    #     risk = "High" if prediction == 1 else "Low"
+    #     st.metric("Risk Level", risk)'
+
     col1, col2, col3 = st.columns(3)
 
+    card_style = """
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #E3F2FD;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    """
+
+# Prediction Card
     with col1:
-        st.metric("Prediction", "Churn" if prediction == 1 else "Stay")
+       pred_text = "Stay" if prediction == 0 else "Churn"
+       st.markdown(f"""
+       <div style="{card_style}">
+           <h4>Prediction</h4>
+           <h2><b>{pred_text}</b></h2>
+        </div>
+        """, unsafe_allow_html=True)
 
+# Model Card
     with col2:
-        st.metric("Model Used", model_used)
+       st.markdown(f"""
+       <div style="{card_style}">
+           <h4>Model Used</h4>
+           <h2><b>{model_used}</b></h2>
+        </div>
+        """, unsafe_allow_html=True)
 
+# Risk Card
     with col3:
-        risk = "High" if prediction == 1 else "Low"
-        st.metric("Risk Level", risk)
+       risk = "Low" if prediction == 0 else "High"
+       st.markdown(f"""
+        <div style="{card_style}">
+          <h4>Risk Level</h4>
+          <h2><b>{risk}</b></h2>
+        </div>
+        """, unsafe_allow_html=True)
 
+    st.markdown("<br><br>", unsafe_allow_html=True)
     #st.markdown("---")
 
     # -----------------------------

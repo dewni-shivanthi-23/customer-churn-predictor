@@ -24,3 +24,8 @@ INFO:root:Model: Production, Prediction: 0
 INFO:root:Model: Production, Prediction: 0
 INFO:root:Model: Production, Prediction: 0
 INFO:root:Model: Production, Prediction: 0
+INFO:root:Model: Staging, Prediction: 1
+INFO:root:Model: Staging, Prediction: 1
+INFO:root:Model: Staging, Prediction: 1
+INFO:root:Model: Production, Prediction: 0
+INFO:root:Model: Staging, Prediction: 1
